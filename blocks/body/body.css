@@ -1,0 +1,8 @@
+.body {
+    min-width: 320px;
+    font-family: 'Inter', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: #FFFFFF;
+    margin: 0;
+    background: #000000;
+}
