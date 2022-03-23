@@ -23,15 +23,8 @@
     opacity: .8;
 }
 
+
 @media screen and (max-width: 550px) {
-    .popup__submit {
-        width: 288px;
-        height: 46px;
-      }
-
-}
-
-@media screen and (max-width: 320px) {
     .popup__submit {
         width: 238px;
         height: 46px;

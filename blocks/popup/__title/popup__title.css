@@ -14,15 +14,9 @@
         line-height: 22px;
         letter-spacing: 0em;
         text-align: center;
-        width: 288px;
+        width: 238px;
         margin: 25px 22px 75px 22px;
     }
 
 }
 
-@media screen and (max-width: 320px) {
-    .popup__title {
-        width: 238px;
-    }
-
-}
