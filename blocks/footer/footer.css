@@ -1,13 +1,14 @@
 .footer {
-    margin: 0 auto 60px 200px;
+    margin: 20px auto 60px 2px;
     max-width: 380px;
 }
 
 @media screen and (max-width: 320px) {
     .footer {
         margin: 27px auto 60px;
-        font-size: 14px;
-        line-height: 17px;
+        
+    
+
     }
 
 }

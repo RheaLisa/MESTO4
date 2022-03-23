@@ -4,4 +4,17 @@
     border-left: 0;
     border-right: 0;
     margin-bottom: 30px;
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+}
+@media screen and (max-width: 550px) {
+    .popup__input {
+        font-weight: 400;
+        letter-spacing: 0em;
+        text-align: left;
+    }
+
 }

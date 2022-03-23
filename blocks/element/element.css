@@ -12,7 +12,7 @@
   margin-right: 0;
 }
 
-@media screen and (max-width: 879px) {
+@media screen and (max-width: 940px) {
   .element:nth-child(3n) {
     margin-right: 17px;
   }
@@ -20,7 +20,7 @@
     margin-right: 0;
   }
 }
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 630px) {
   .element {
     margin-right: 0;
   }
