@@ -4,7 +4,7 @@
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   box-sizing: border-box;
-  margin: auto;
+  margin: 0;
   padding: 0;
   background: #000000;
   color: #FFFFFF;
@@ -14,8 +14,12 @@
   max-width: 1280px;
   top: 0;
   height: 100%;
-  width: fit-content;
+ /* width: fit-content;*/
 }
 
-
+@media screen and (max-width: 370px) {
+  .page {
+    margin: auto;
+  }
+}
 

@@ -5,4 +5,10 @@
     color: #FFFFFF;
     margin: 0;
     background: #000000;
+   /* width: fit-content;*/
+}
+@media screen and (max-width: 320px) {
+    .body {
+      width: 320px;
+    }
 }

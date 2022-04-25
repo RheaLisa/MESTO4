@@ -1,20 +1,21 @@
 .popup__input {
-    border-bottom: 1px solid rgba(0, 0, 0, .2);
-    border-top: 0;
-    border-left: 0;
-    border-right: 0;
-    margin-bottom: 30px;
-    font-family: 'Inter', Arial, sans-serif;
-    font-style: normal;
-    font-weight: normal;
+    width: 358px;
+    padding-top: 26px;
+    padding-bottom: 11px;
     font-size: 14px;
     line-height: 17px;
+    box-sizing: border-box;
+    border-style: none none solid;
+    border-image: initial;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    margin: 0;
 }
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 650px) {
     .popup__input {
         font-weight: 400;
         letter-spacing: 0em;
         text-align: left;
+        width: 238px;
     }
 
 }

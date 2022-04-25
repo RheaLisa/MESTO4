@@ -1,21 +1,19 @@
 .popup__submit {
+    
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     width: 358px;
     height: 50px;
-    margin: 28px auto 35px auto;
-    background: #000000;
-    border-radius: 2px;
-    border: 0;
-    color: #FFFFFF;
-    cursor: pointer;
-    align-self: center;
-    background-position: center;
+    margin-top: 48px;
     font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
     line-height: 22px;
-    letter-spacing: 0em;
-    font-family: 'Inter', Arial, sans-serif;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+     border-radius: 2px;
+     border: none;
+    transition: all 0.3s ease 0s;
 
 }
 
@@ -24,10 +22,12 @@
 }
 
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 650px) {
     .popup__submit {
         width: 238px;
-        height: 46px;
+        margin-top: 45px;
+        font-size: 14px;
+        line-height: 17px;
 
     }
 
