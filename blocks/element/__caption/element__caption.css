@@ -9,9 +9,9 @@
 
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 370px) {
   .element__caption {
-    margin: 15px 15px 31px 21px;
+    margin: 20px 15px 31px 21px;
   }
 
 }

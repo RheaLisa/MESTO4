@@ -5,10 +5,10 @@
   object-fit: cover;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 370px) {
   .profile__avatar {
     margin-bottom: 27px;
-    margin-top: 10px;
+    margin-top: 40px;
     margin-right: 0;
   }
 
