@@ -7,85 +7,81 @@
   <link rel="stylesheet" href="./pages/index.css">
   <title>MESTO</title>
 </head>
+
 <body class="page">
 
-    <header class="header">
-   <img class="header__logo" alt="Место" src="./image/logo.svg">
-    </header>
-    <main class="content">
-      <section class="profile">
-        <img class="profile__avatar" alt="Кусто" src="./image/image.jpg">
-        <div class="profile__info">
-          <h1 class="profile__title">Жак-Ив Кусто</h1>
-          <button class="profile__btn-edit" type="button"></button>
-          <p class="profile__text">Исследователь океана</p>
+  <header class="header">
+    <img class="header__logo" alt="Место" src="./image/logo.svg">
+  </header>
+  <main class="content">
+    <section class="profile">
+      <img class="profile__avatar" alt="Кусто" src="./image/image.jpg">
+      <div class="profile__info">
+        <h1 class="profile__title">Жак-Ив Кусто</h1>
+        <button class="profile__btn-edit" type="button"></button>
+        <p class="profile__text">Исследователь океана</p>
+      </div>
+      <button class="profile__btn-add" type="button"></button>
+    </section>
+    <section class="elements">
+     
+    </section>
+    <template class="element__template">
+      <div class="element">
+        <img class="element__image" src="#" alt="">
+        <div class="element__caption">
+          <h2 class="element__title"></h2>
+          <button class="element__heart " type="button"> </button>
         </div>
-        <button class="profile__btn-add" type="button"></button>
-      </section>
-      <section class="elements">
-        <div class="element">
-          <img class="element__image" alt="Карачаевск" src="./image/karachaev.jpg">
-          <div class="element__caption">
-            <h2 class="element__title">Карачаевск</h2>
-            <button class="element__heart " type="button"> </button>
-          </div>
-        </div>
-        <div class="element">
-          <img class="element__image" alt="Гора Эльбрус" src="./image/elbrus.png">
-          <div class="element__caption">
-            <h2 class="element__title">Гора Эльбрус</h2>
-            <button class="element__heart " type="button"> </button>
-          </div>
-        </div>
-        <div class="element">
-          <img class="element__image" alt="Домбай" src="./image/dombay.png">
-          <div class="element__caption">
-            <h2 class="element__title">Домбай</h2>
-            <button class="element__heart " type="button"> </button>
-          </div>
-        </div>
-        <div class="element">
-          <img class="element__image" alt="Гора Эльбрус" src="./image/elbrus.png">
-          <div class="element__caption">
-            <h2 class="element__title">Гора Эльбрус</h2>
-            <button class="element__heart " type="button"> </button>
-          </div>
-        </div>
-        <div class="element">
-          <img class="element__image" alt="Домбай" src="./image/dombay.png">
-          <div class="element__caption">
-            <h2 class="element__title">Домбай</h2>
-            <button class="element__heart " type="button"> </button>
-          </div>
-        </div>
-        <div class="element">
-          <img class="element__image" alt="Карачаевск" src="./image/karachaev.jpg">
-          <div class="element__caption">
-            <h2 class="element__title">Карачаево-Черкесия</h2>
-            <button class="element__heart " type="button"> </button>
-          </div>
-        </div>
-      </section>
+        <button class="element__trash" type="button" aria-label="удалить"></button>
+      </div>
+    </template>
 
+  </main>
+  <footer class="footer">
+    <p class="footer__copyright">&#169;2022 Mesto Russia</p>
+  </footer>
 
-    </main>
-    <footer class="footer">
-      <p class="footer__copyright">&#169;2022 Mesto Russia</p>
-    </footer>
-
-  <section class="popup  popup_button_edit">
-     <div class="popup__container">
-      <button class="popup__close" type="button"></button>
+  <section id="profile" class="popup  popup_button_edit">
+    <div class="popup__container">
+      <button class="popup__edit-close" type="button"></button>
       <h2 class="popup__title">Редактировать профиль</h2>
       <form name="profile" class="popup__input-form">
         <input class="popup__input popup__input_type_name" type="text" id="name" name="name" value="Жак-Ив Кусто"
           placeholder="Жак-Ив Кусто">
-        <input class="popup__input popup__input_type_info" type="text" id="profession" name="profession" value="Исследователь океана"
-          placeholder="Исследователь океана">
+        <input class="popup__input popup__input_type_info" type="text" id="profession" name="profession"
+          value="Исследователь океана" placeholder="Исследователь океана">
         <button class="popup__submit" type="submit">Сохранить</button>
       </form>
     </div>
-    </section>
-  <script src="./scripts/main.js"></script>
+  </section>
+  <section id="place" class="popup  popup_add">
+    <div class="popup__container">
+      <button class="popup__close" type="button"></button>
+      <h2 class="popup__title">Новое место</h2>
+      <form name="place" class="popup__input" id ="add_place">
+        <input class="popup__input popup__input_type_place" type="text" id="place" name="place" value="Название"
+          placeholder="Название">
+        <input class="popup__input popup__input_type_link" type="text" id="link" name="link" value="Ссылка на картинку"
+          placeholder="Ссылка на картинку">
+        <button class="popup__submit" type="submit">Создать</button>
+      </form>
+    </div>
+  </section>
+  <section class="popup popup_img ">
+    <figure class="popup__image">
+      <button class="popup__img-close" type="button" aria-label="закрыть"></button>
+      <img class="popup__item-image"
+        src="https://images.unsplash.com/photo-1581010124530-f3c49901215f?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80"
+        alt="Маттерхорн">
+      <figcaption class="popup__item-text"></figcaption>
+    </figure>
+  </section>
+
+ 
+ 
+  <script src="./scripts/card.js"></script>
+
 </body>
+
 </html>
