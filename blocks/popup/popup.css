@@ -12,6 +12,6 @@
     right: 0;
     bottom: 0;
     left: 0;
-    transition: visibility 0s, opacity 0.5s linear;
+    transition: height 0ms .4s,opacity .4s 0ms;
 }
 

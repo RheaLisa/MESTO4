@@ -26,7 +26,7 @@
     <section class="elements">
      
     </section>
-    <template class="element__template">
+    <template id = "elements">
       <div class="element">
         <img class="element__image" src="#" alt="">
         <div class="element__caption">
@@ -46,7 +46,7 @@
     <div class="popup__container">
       <button class="popup__edit-close" type="button"></button>
       <h2 class="popup__title">Редактировать профиль</h2>
-      <form name="profile" class="popup__input-form">
+      <form name="profile" class="popup__input-form" id ='input-edit'>
         <input class="popup__input popup__input_type_name" type="text" id="name" name="name" value="Жак-Ив Кусто"
           placeholder="Жак-Ив Кусто">
         <input class="popup__input popup__input_type_info" type="text" id="profession" name="profession"
@@ -59,10 +59,10 @@
     <div class="popup__container">
       <button class="popup__close" type="button"></button>
       <h2 class="popup__title">Новое место</h2>
-      <form name="place" class="popup__input" id ="add_place">
-        <input class="popup__input popup__input_type_place" type="text" id="place_name" name="place_name" value="Название"
+      <form name="place" class="popup__input-form" id ="add_place">
+        <input class="popup__input popup__input_type_place" type="text" id="place_name" name="place_name"
           placeholder="Название">
-        <input class="popup__input popup__input_type_link" type="text" id="link" name="link" value="Ссылка на картинку"
+        <input class="popup__input popup__input_type_link" type="text" id="link" name="link" 
           placeholder="Ссылка на картинку">
         <button class="popup__submit" type="submit">Создать</button>
       </form>

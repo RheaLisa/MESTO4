@@ -1,8 +1,7 @@
 const btnInfoUser = document.querySelector(".profile__btn-edit");
-const popup = document.querySelector(".popup");
 const formPopupUser = document.querySelector('.popup_button_edit');
 const btnCloseFormUser = document.querySelector(".popup__edit-close");
-const formUserInfo = document.querySelector(".popup__input-form");
+const formUserInfo = document.querySelector("#input-edit");
 const nameUser = document.querySelector(".popup__input_type_name");
 const descriptionUser = document.querySelector(".popup__input_type_info");
 const btnSaveFormUser = document.querySelector(".popup__submit");
@@ -26,7 +25,8 @@ const linkCard = document.querySelector(".popup__input_type_link");
 const nameTitle = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__text");
 const containerCardItems = document.querySelector(".element__image");
-
+const template = document.querySelector("#elements").content;
+const container = document.querySelector('.elements');
 //--------------Функции открытия/закрытия попапа-------
 
 function openPopup(popup) {
@@ -98,11 +98,10 @@ const cards = [
     link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
   },
 ];
-cards.forEach(createCard);
+
 
 //---------удаление, лайк, открытие картинки-------
 function btnLikeHandler(evt) {
-  console.log('evt', evt)
   evt.target.classList.toggle("element__heart_active");
 }
 
@@ -113,7 +112,7 @@ function btnDeleteHandler(evt) {
 function btnOpenPopupImg(evt) {
   openPopup(popupOpenImg);
   imgPopup.src = evt.target.src;
-  nameImg.textContent = evt.target.nextElementSibling.firstElementChild.textContent;;
+  nameImg.innerText = evt.currentTarget.parentNode.querySelector('.element__title').textContent;
    imgPopup.alt = evt.target.alt;
 }
 btnClosePopupOpenImg.addEventListener("click", () => {
@@ -122,30 +121,30 @@ btnClosePopupOpenImg.addEventListener("click", () => {
 
 //------вывод карточек на страницу------
 function createCard(card) {
-  const template = document
-    .querySelector(".element__template")
-    .content
-    .cloneNode(true);
-  const nameCard = template.querySelector(".element__title");
-  const imgCard = template.querySelector(".element__image");
-  const trash = template.querySelector(".element__trash");
-  const like = template.querySelector(".element__heart");
-  const containerCardItems = document.querySelector(".elements");
+ 
+  const elm = template.querySelector('.element').cloneNode(true);
+  const nameCard = elm.querySelector(".element__title");
+  const imgCard = elm.querySelector(".element__image");
+  const trash = elm.querySelector(".element__trash");
+  const like = elm.querySelector(".element__heart");
   like.addEventListener("click", btnLikeHandler);
   trash.addEventListener("click", btnDeleteHandler);
   imgCard.addEventListener("click", btnOpenPopupImg);
   nameCard.textContent = card.name;
   imgCard.src = card.link;
 
-  containerCardItems.prepend(template);
+  return elm;
 }
-
+cards.forEach((card)=>{
+  const renderCard = createCard(card)
+  container.prepend(renderCard)
+})
 //------создание карточек----
 
 function AddCardHandler(evt) {
   evt.preventDefault();
   const newCard = { link: linkCard.value, name: nameCard.value }
-  createCard(newCard);
+  container.prepend(createCard(newCard));
   evt.target.reset();
   closePopup(formAddElm);
 }
