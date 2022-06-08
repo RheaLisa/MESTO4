@@ -54,14 +54,14 @@ function nameDescriptionSite() {
 }
 //-----изменения данных пользователя из формы-----
 
-function handlerFormUserSubmit(evt) {
+function changeFormUserSubmit(evt) {
   evt.preventDefault();
   nameTitle.textContent = nameUser.value;
   profileDescription.textContent = descriptionUser.value;
   closePopup(formPopupUser);
 }
 
-formUserInfo.addEventListener("submit", handlerFormUserSubmit);
+formUserInfo.addEventListener("submit", changeFormUserSubmit);
 //--------слушатели событий------
 
 btnAddElm.addEventListener("click", function (evt) {
@@ -101,15 +101,15 @@ const cards = [
 
 
 //---------удаление, лайк, открытие картинки-------
-function btnLikeHandler(evt) {
+function likeBtnHandler(evt) {
   evt.target.classList.toggle("element__heart_active");
 }
 
-function btnDeleteHandler(evt) {
+function deleteBtnHandler(evt) {
   evt.target.closest(".element").remove();
 }
 
-function btnOpenPopupImg(evt) {
+function openBtnPopupImg(evt) {
   openPopup(popupOpenImg);
   imgPopup.src = evt.target.src;
   nameImg.innerText = evt.currentTarget.parentNode.querySelector('.element__title').textContent;
@@ -127,9 +127,9 @@ function createCard(card) {
   const imgCard = elm.querySelector(".element__image");
   const trash = elm.querySelector(".element__trash");
   const like = elm.querySelector(".element__heart");
-  like.addEventListener("click", btnLikeHandler);
-  trash.addEventListener("click", btnDeleteHandler);
-  imgCard.addEventListener("click", btnOpenPopupImg);
+  like.addEventListener("click", likeBtnHandler);
+  trash.addEventListener("click", deleteBtnHandler);
+  imgCard.addEventListener("click", openBtnPopupImg);
   nameCard.textContent = card.name;
   imgCard.src = card.link;
 
