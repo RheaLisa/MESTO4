@@ -121,8 +121,7 @@ btnClosePopupOpenImg.addEventListener("click", () => {
 
 //------вывод карточек на страницу------
 function createCard(card) {
- 
-  const elm = template.querySelector('.element').cloneNode(true);
+   const elm = template.querySelector('.element').cloneNode(true);
   const nameCard = elm.querySelector(".element__title");
   const imgCard = elm.querySelector(".element__image");
   const trash = elm.querySelector(".element__trash");
@@ -132,20 +131,20 @@ function createCard(card) {
   imgCard.addEventListener("click", openBtnPopupImg);
   nameCard.textContent = card.name;
   imgCard.src = card.link;
-
+  imgCard.alt = card.name;
   return elm;
 }
 cards.forEach((card)=>{
   const renderCard = createCard(card)
-  container.prepend(renderCard)
+  container.append(renderCard)
 })
 //------создание карточек----
 
-function AddCardHandler(evt) {
+function addCardHandler(evt) {
   evt.preventDefault();
   const newCard = { link: linkCard.value, name: nameCard.value }
   container.prepend(createCard(newCard));
   evt.target.reset();
   closePopup(formAddElm);
 }
-formHandlerAddElm.addEventListener("submit", AddCardHandler);
+formHandlerAddElm.addEventListener("submit", addCardHandler);
