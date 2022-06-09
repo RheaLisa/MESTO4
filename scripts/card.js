@@ -121,7 +121,7 @@ btnClosePopupOpenImg.addEventListener("click", () => {
 
 //------вывод карточек на страницу------
 function createCard(card) {
-   const elm = template.querySelector('.element').cloneNode(true);
+  const elm = template.querySelector('.element').cloneNode(true);
   const nameCard = elm.querySelector(".element__title");
   const imgCard = elm.querySelector(".element__image");
   const trash = elm.querySelector(".element__trash");
@@ -142,7 +142,7 @@ cards.forEach((card)=>{
 
 function addCardHandler(evt) {
   evt.preventDefault();
-  const newCard = { link: linkCard.value, name: nameCard.value }
+  const newCard = { link: linkCard.value, name: nameCard.value, alt: nameCard.value }
   container.prepend(createCard(newCard));
   evt.target.reset();
   closePopup(formAddElm);
