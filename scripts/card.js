@@ -5,7 +5,7 @@ const formUserInfo = document.querySelector("#input-edit");
 const nameUser = document.querySelector("#name");
 const descriptionUser = document.querySelector("#info");
 const btnSaveFormUser = document.querySelector(".popup__submit");
-const popupBg = document.querySelector('.popup__bg');
+const popupBg = document.querySelector('.popup_bg');
 const popups = document.querySelectorAll('.popup');
 
 //-----доступ к попап открытию картинки------
@@ -175,7 +175,7 @@ function closeByEscape(evt) {
 } 
 
 document.addEventListener('click', (e) => { 
-  if(e.target.classList?.contains('popup__bg')) {
+  if(e.target.classList?.contains('popup_bg')) {
     const openedPopup = document.querySelector('.popup_opened');
     closePopup(openedPopup);
   }
