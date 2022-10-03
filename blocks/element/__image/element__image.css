@@ -3,4 +3,5 @@
   width: 282px;
   object-fit: cover;
   margin: 0;
+  display: block;
 }

@@ -24,10 +24,10 @@
       <button class="profile__btn-add" type="button"></button>
     </section>
     <section class="elements">
-     
+
     </section>
-    <template id = "elements">
-      <div class="element">
+    <template id="elements">
+      <div class="element" id="element">
         <img class="element__image" src="#" alt="">
         <div class="element__caption">
           <h2 class="element__title"></h2>
@@ -42,33 +42,45 @@
     <p class="footer__copyright">&#169;2022 Mesto Russia</p>
   </footer>
 
-  <section id="profile" class="popup  popup_button_edit">
+  <section id="profile" class="popup popup__bg popup_button_edit">
     <div class="popup__container">
       <button class="popup__edit-close" type="button"></button>
       <h2 class="popup__title">Редактировать профиль</h2>
-      <form name="profile" class="popup__input-form" id ='input-edit'>
-        <input class="popup__input popup__input_type_name" type="text" id="name" name="name" value="Жак-Ив Кусто"
-          placeholder="Жак-Ив Кусто">
-        <input class="popup__input popup__input_type_info" type="text" id="profession" name="profession"
-          value="Исследователь океана" placeholder="Исследователь океана">
-        <button class="popup__submit" type="submit">Сохранить</button>
+      <form name="profile" class="popup__input-form" id='input-edit' novalidate>
+        <div class=input-wrap>
+          <input class="popup__input" minlength="2" maxlength="40" id="name" name="name" type="text"
+            value="Жак-Ив Кусто" placeholder="Жак-Ив Кусто" autocomplete="off" required>
+          <span class="popup__input-error name-error"></span>
+        </div>
+        <div class=input-wrap>
+          <input class="popup__input" minlength="2" maxlength="200" id="info" name="info" type="text"
+            value="Исследователь океана" placeholder="Исследователь океана" autocomplete="off" required>
+          <span class="popup__input-error info-error"></span>
+        </div>
+        <button class="popup__submit" id="submit" type="submit">Сохранить</button>
       </form>
     </div>
   </section>
-  <section id="place" class="popup  popup_add">
+  <section class="popup popup__bg popup_add">
     <div class="popup__container">
       <button class="popup__close" type="button"></button>
       <h2 class="popup__title">Новое место</h2>
-      <form name="place" class="popup__input-form" id ="add_place">
-        <input class="popup__input popup__input_type_place" type="text" id="place_name" name="place_name"
-          placeholder="Название">
-        <input class="popup__input popup__input_type_link" type="text" id="link" name="link" 
-          placeholder="Ссылка на картинку">
-        <button class="popup__submit" type="submit">Создать</button>
+      <form name="place" class="popup__input-form" id="add_place" novalidate>
+        <div class=input-wrap>
+          <input class="popup__input" minlength="2" maxlength="30" id="place" name="place_name" type="text" value=""
+            placeholder="Название" autocomplete="off" required>
+          <span class="popup__input-error place-error"></span>
+        </div>
+        <div class=input-wrap>
+          <input class="popup__input" id="link" name="link" type="url" value="" placeholder="Ссылка на картинку"
+            autocomplete="off" required>
+          <span class="popup__input-error link-error">Введите адрес сайта</span>
+        </div>
+        <button class="popup__submit" id="submit" type="submit">Создать</button>
       </form>
     </div>
   </section>
-  <section class="popup popup_img ">
+  <section class="popup popup__bg popup_img ">
     <figure class="popup__image">
       <button class="popup__img-close" type="button" aria-label="закрыть"></button>
       <img class="popup__item-image"
@@ -77,10 +89,8 @@
       <figcaption class="popup__item-text"></figcaption>
     </figure>
   </section>
-
- 
- 
   <script src="./scripts/card.js"></script>
+  <script src="./scripts/validate.js"></script>
 
 </body>
 
