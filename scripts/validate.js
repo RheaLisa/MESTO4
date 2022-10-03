@@ -4,12 +4,13 @@ const showInputError = (formElement, inputElement, errorMessage) => {
   inputElement.classList.add('popup__input_type_error');
   errorElement.textContent = errorMessage;
   errorElement.classList.add('popup__input-error_visible');
+ 
 };
 
 const hideInputError = (formElement, inputElement) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.remove('popup__input_type_error');
-  console.log('errorElement', `.${inputElement.id}-error`, formElement)
+ 
   errorElement.classList.remove('popup__input-error_visible');
   errorElement.textContent = '';
 };
