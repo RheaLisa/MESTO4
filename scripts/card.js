@@ -41,21 +41,12 @@ function closePopup(popup) {
   document.removeEventListener('keydown', closeByEscape); 
 }
 
-function deleteErrors(popup) {
-  const errorMessages = popup.querySelectorAll('.popup__input-error');
-  errorMessages.forEach((errorElement) => {
-    errorElement.classList.remove('popup__input-error_visible');
-  });
-  const errorBorder = popup.querySelectorAll('.popup__input');
-  errorBorder.forEach((border) => {
-    border.classList.remove('popup__input_type_error');
-  });
-}
+
 //--------слушатели для открытия форм редактирования-----
 
 btnInfoUser.addEventListener("click", function (evt) {
   openPopup(formPopupUser);
-  nameDescriptionSite() 
+  setDescriptionSite() 
 });
 
 btnCloseFormUser.addEventListener("click", function (evt) {
@@ -64,7 +55,7 @@ btnCloseFormUser.addEventListener("click", function (evt) {
 
 //-------отображение имени и описания------
 
-function nameDescriptionSite() {
+function setDescriptionSite() {
   nameUser.value = nameTitle.textContent;
   descriptionUser.value = profileDescription.textContent;
 }
@@ -129,8 +120,8 @@ function deleteBtnHandler(evt) {
 function openBtnPopupImg(evt) {
   openPopup(popupOpenImg);
   imgPopup.src = evt.target.src;
-  nameImg.innerText = evt.currentTarget.parentNode.querySelector('.element__title').textContent;
-   imgPopup.alt = evt.target.alt;
+  nameImg.textContent = evt.target.alt;;
+  imgPopup.alt = evt.target.alt;
 }
 btnClosePopupOpenImg.addEventListener("click", () => {
   closePopup(popupOpenImg);
@@ -165,6 +156,7 @@ function addCardHandler(evt) {
   btnSaveFormUser.disabled = true;
   btnSaveFormUser.classList.add('popup__submit_disabled');
   closePopup(formAddElm);
+
 }
 formHandlerAddElm.addEventListener("submit", addCardHandler);
 function closeByEscape(evt) {
@@ -173,6 +165,8 @@ function closeByEscape(evt) {
     closePopup(openedPopup);
   }
 } 
+
+
 
 document.addEventListener('click', (e) => { 
   if(e.target.classList?.contains('popup_bg')) {

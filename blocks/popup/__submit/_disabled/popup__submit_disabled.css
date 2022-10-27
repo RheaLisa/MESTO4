@@ -5,3 +5,16 @@
     border: 1px solid #000000;
     border-radius: 2px;
 }
+.popup__submit_disabled:hover {
+    cursor: default;
+}
+@media (max-width: 650px) {
+    .popup__submit_disabled {
+        width: 238px;
+        height: 46px;
+        margin: 0;
+        font-size: 14px;
+        line-height: 16,94px;
+    }
+    
+}

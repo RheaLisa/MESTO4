@@ -11,3 +11,9 @@
     cursor: pointer;
     background-size: contain;
 }
+.popup__img-close {
+    height: 20px;
+    right: 0;
+    width: 20px;
+    top: -36px;
+}
